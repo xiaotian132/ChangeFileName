@@ -44,14 +44,14 @@ void FindUpDate::ChangeFileName()
             std::string newFilename;
             std::string newPath;
 
-            // 新文件名 01 02 ... 逐次排列
+            // 新文件名+ -01 -02 ... 逐次排列
             if (newFileIndex < 10)
             {
-                newFilename = "0" + std::to_string(newFileIndex) + ".stp";
+                newFilename = filename.substr(0, filename.length() - 4) + "-0" + std::to_string(newFileIndex) + ".stp";
             }
             else
             {
-                newFilename = std::to_string(newFileIndex) + ".stp";
+                newFilename = filename.substr(0, filename.length() - 4) + "-" + std::to_string(newFileIndex) + ".stp";
             }
 
             newPath = this->m_Path + "/" + newFilename;
